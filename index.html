@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline Inventory Management</title>
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6">Airline Inventory Management</h1>
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex space-x-2">
+        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Flights</button>
+        <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Inventory</button>
+        <button class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Passengers</button>
+        <button class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">Schedule</button>
+      </div>
+      <div class="flex items-center space-x-2">
+        <input type="text" placeholder="Search..." class="px-4 py-2 border rounded" id="searchInput">
+        <button class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Search</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Total Flights</h2>
+        <p class="text-3xl font-bold">247</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Available Seats</h2>
+        <p class="text-3xl font-bold">1,893</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Cargo Capacity</h2>
+        <p class="text-3xl font-bold">12,500 kg</p>
+      </div>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+      <div class="flex mb-4">
+        <button class="px-4 py-2 bg-blue-500 text-white rounded-l" onclick="showTab('inventory')">Inventory</button>
+        <button class="px-4 py-2 bg-blue-500 text-white" onclick="showTab('schedule')">Flight Schedule</button>
+        <button class="px-4 py-2 bg-blue-500 text-white rounded-r" onclick="showTab('passengers')">Passenger List</button>
+      </div>
+      <div id="inventory" class="tab-content">
+        <table class="w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Item</th>
+              <th class="text-left">Quantity</th>
+              <th class="text-left">Location</th>
+              <th class="text-left">Status</th>
+            </tr>
+          </thead>
+          <tbody id="inventoryTableBody"></tbody>
+        </table>
+      </div>
+      <div id="schedule" class="tab-content hidden">
+        <table class="w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Flight Number</th>
+              <th class="text-left">Departure</th>
+              <th class="text-left">Arrival</th>
+              <th class="text-left">Date</th>
+              <th class="text-left">Status</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTableBody"></tbody>
+        </table>
+      </div>
+      <div id="passengers" class="tab-content hidden">
+        <table class="w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Name</th>
+              <th class="text-left">Flight Number</th>
+              <th class="text-left">Seat</th>
+              <th class="text-left">Status</th>
+            </tr>
+          </thead>
+          <tbody id="passengersTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="/main.js"></script>
+</body>
+</html>
